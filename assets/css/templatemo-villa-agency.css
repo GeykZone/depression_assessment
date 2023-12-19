@@ -801,15 +801,194 @@ Banner Style
 }
 
 .main-banner .item-8 {
+  position: relative;
+}
+
+.main-banner .item-8::before,
+.main-banner .item-8::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.main-banner .item-8::before {
+  background-color: rgba(0, 0, 0, 0.164); /* Adjust the alpha value for the desired transparency */
+  z-index: -1; /* Move the overlay behind the content */
+}
+
+.main-banner .item-8::after {
   background-image: url(../images/banner-08.jpg);
+  background-size: cover;
+  z-index: -2; /* Move the background further behind the content and overlay */
+}
+
+.main-banner .item-8 .header-text {
+  position: relative;
+  z-index: 1; /* Keep the text above the overlay and background */
+  color: #fff; /* Set text color to white or appropriate color for better visibility */
 }
 
 .main-banner .item-9 {
+  position: relative;
+}
+
+.main-banner .item-9::before,
+.main-banner .item-9::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.main-banner .item-9::before {
+  background-color: rgba(0 0 0 / 0.24); /* Adjust the alpha value for the desired transparency */
+  z-index: -1; /* Move the overlay behind the content */
+}
+
+.main-banner .item-9::after {
   background-image: url(../images/banner-09.jpg);
+  background-size: cover;
+  z-index: -2; /* Move the background further behind the content and overlay */
+}
+
+.main-banner .item-9 .header-text {
+  position: relative;
+  z-index: 1; /* Keep the text above the overlay and background */
+  color: #fff; /* Set text color to white or appropriate color for better visibility */
 }
 
 .main-banner .item-10 {
   background-image: url(../images/banner-10.jpg);
+}
+
+.main-banner .item-11 {
+  position: relative;
+}
+
+.main-banner .item-11::before,
+.main-banner .item-11::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.main-banner .item-11::before {
+  background-color: rgba(0, 0, 0, 0.164); /* Adjust the alpha value for the desired transparency */
+  z-index: -1; /* Move the overlay behind the content */
+}
+
+.main-banner .item-11::after {
+  background-image: url(../images/banner-01.jpg);
+  background-size: cover;
+  z-index: -2; /* Move the background further behind the content and overlay */
+}
+
+.main-banner .item-11 .header-text {
+  position: relative;
+  z-index: 1; /* Keep the text above the overlay and background */
+  color: #fff; /* Set text color to white or appropriate color for better visibility */
+}
+
+.main-banner .item-12 {
+  background-image: url(../images/banner-02.jpg);
+}
+
+.main-banner .item-13 {
+  background-image: url(../images/banner-03.jpg);
+}
+
+.main-banner .item-14 {
+  background-image: url(../images/banner-04.jpg);
+}
+
+.main-banner .item-15 {
+  background-image: url(../images/banner-05.jpg);
+}
+
+.main-banner .item-16 {
+  background-image: url(../images/banner-06.jpg);
+}
+
+.main-banner .item-17 {
+  background-image: url(../images/banner-07.jpg);
+}
+
+.main-banner .item-18 {
+  position: relative;
+}
+
+.main-banner .item-18::before,
+.main-banner .item-18::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.main-banner .item-18::before {
+  background-color: rgba(0, 0, 0, 0.164); /* Adjust the alpha value for the desired transparency */
+  z-index: -1; /* Move the overlay behind the content */
+}
+
+.main-banner .item-18::after {
+  background-image: url(../images/banner-08.jpg);
+  background-size: cover;
+  z-index: -2; /* Move the background further behind the content and overlay */
+}
+
+.main-banner .item-18 .header-text {
+  position: relative;
+  z-index: 1; /* Keep the text above the overlay and background */
+  color: #fff; /* Set text color to white or appropriate color for better visibility */
+}
+
+.main-banner .item-19 {
+  position: relative;
+}
+
+.main-banner .item-19::before,
+.main-banner .item-19::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.main-banner .item-19::before {
+  background-color: rgba(0 0 0 / 0.24); /* Adjust the alpha value for the desired transparency */
+  z-index: -1; /* Move the overlay behind the content */
+}
+
+.main-banner .item-19::after {
+  background-image: url(../images/banner-09.jpg);
+  background-size: cover;
+  z-index: -2; /* Move the background further behind the content and overlay */
+}
+
+.main-banner .item-19 .header-text {
+  position: relative;
+  z-index: 1; /* Keep the text above the overlay and background */
+  color: #fff; /* Set text color to white or appropriate color for better visibility */
+}
+
+.main-banner .item-20 {
+  background-image: url(../images/banner-10.jpg);
+}
+
+.main-banner .item-21 {
+  background-image: url(../images/banner-05.jpg);
 }
 
 .main-banner .item span.category {

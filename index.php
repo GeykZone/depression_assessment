@@ -254,6 +254,116 @@
          <!-- ***** Question 6 ***** -->
         </div>
       </div>
+
+      <div class="item item-8 hidden">
+        <div class="header-text">
+          <!-- ***** Question 7 ***** -->
+          <section class="radio-section">
+            <div class="radio-list ">
+              <h3 class="text-white">I feel worthless or guilty for no apparent reason.</h3>
+              <div class="radio-item"><input name="radio7" value="1" id="q7_radio1" type="radio"><label for="q7_radio1">1 Strongly Disagree</label></div>
+              <div class="radio-item"><input name="radio7" value="2" id="q7_radio2" type="radio"><label for="q7_radio2">2 Disagree</label></div>
+              <div class="radio-item"><input name="radio7" value="3" id="q7_radio3" type="radio"><label for="q7_radio3">3 Neutral</label></div>
+              <div class="radio-item"><input name="radio7" value="4" id="q7_radio4" type="radio"><label for="q7_radio4">4 Agree</label></div>
+              <div class="radio-item"><input name="radio7" value="5" id="q7_radio5" type="radio"><label for="q7_radio5">5 Strongly Agree</label></div>
+
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
+                <button class="cutom-btn " onclick="previousPage()"><span> Previous</span></button>
+                <button class="cutom-btn " onclick="nextPage()"><span> Next</span></button>
+              </div>
+            </div>
+          </section>
+         <!-- ***** Question 7 ***** -->
+        </div>
+      </div>
+
+      <div class="item item-9 hidden">
+        <div class="header-text">
+          <!-- ***** Question 8 ***** -->
+          <section class="radio-section">
+            <div class="radio-list ">
+              <h3 class="text-white">I have had thoughts of harming myself or ending my life.</h3>
+              <div class="radio-item"><input name="radio8" value="1" id="q8_radio1" type="radio"><label for="q8_radio1">1 Strongly Disagree</label></div>
+              <div class="radio-item"><input name="radio8" value="2" id="q8_radio2" type="radio"><label for="q8_radio2">2 Disagree</label></div>
+              <div class="radio-item"><input name="radio8" value="3" id="q8_radio3" type="radio"><label for="q8_radio3">3 Neutral</label></div>
+              <div class="radio-item"><input name="radio8" value="4" id="q8_radio4" type="radio"><label for="q8_radio4">4 Agree</label></div>
+              <div class="radio-item"><input name="radio8" value="5" id="q8_radio5" type="radio"><label for="q8_radio5">5 Strongly Agree</label></div>
+
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
+                <button class="cutom-btn " onclick="previousPage()"><span> Previous</span></button>
+                <button class="cutom-btn " onclick="nextPage()"><span> Next</span></button>
+              </div>
+            </div>
+          </section>
+         <!-- ***** Question 8 ***** -->
+        </div>
+      </div>
+
+      <div class="item item-10 hidden">
+        <div class="header-text">
+          <!-- ***** Question 9 ***** -->
+          <section class="radio-section">
+            <div class="radio-list ">
+              <h3 class="text-white">I have trouble enjoying the company of others.</h3>
+              <div class="radio-item"><input name="radio9" value="1" id="q9_radio1" type="radio"><label for="q9_radio1">1 Strongly Disagree</label></div>
+              <div class="radio-item"><input name="radio9" value="2" id="q9_radio2" type="radio"><label for="q9_radio2">2 Disagree</label></div>
+              <div class="radio-item"><input name="radio9" value="3" id="q9_radio3" type="radio"><label for="q9_radio3">3 Neutral</label></div>
+              <div class="radio-item"><input name="radio9" value="4" id="q9_radio4" type="radio"><label for="q9_radio4">4 Agree</label></div>
+              <div class="radio-item"><input name="radio9" value="5" id="q9_radio5" type="radio"><label for="q9_radio5">5 Strongly Agree</label></div>
+
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
+                <button class="cutom-btn " onclick="previousPage()"><span> Previous</span></button>
+                <button class="cutom-btn " onclick="nextPage()"><span> Next</span></button>
+              </div>
+            </div>
+          </section>
+         <!-- ***** Question 9 ***** -->
+        </div>
+      </div>
+
+      <div class="item item-11 hidden">
+        <div class="header-text">
+          <!-- ***** Question 10 ***** -->
+          <section class="radio-section">
+            <div class="radio-list ">
+              <h3 class="text-white">I find it hard to get out of bed or start my day.</h3>
+              <div class="radio-item"><input name="radio10" value="1" id="q10_radio1" type="radio"><label for="q10_radio1">1 Strongly Disagree</label></div>
+              <div class="radio-item"><input name="radio10" value="2" id="q10_radio2" type="radio"><label for="q10_radio2">2 Disagree</label></div>
+              <div class="radio-item"><input name="radio10" value="3" id="q10_radio3" type="radio"><label for="q10_radio3">3 Neutral</label></div>
+              <div class="radio-item"><input name="radio10" value="4" id="q10_radio4" type="radio"><label for="q10_radio4">4 Agree</label></div>
+              <div class="radio-item"><input name="radio10" value="5" id="q10_radio5" type="radio"><label for="q10_radio5">5 Strongly Agree</label></div>
+
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
+                <button class="cutom-btn " onclick="previousPage()"><span> Previous</span></button>
+                <button class="cutom-btn " onclick="nextPage()"><span> Next</span></button>
+              </div>
+            </div>
+          </section>
+         <!-- ***** Question 10 ***** -->
+        </div>
+      </div>
+
+      <div class="item item-12 hidden">
+        <div class="header-text">
+          <!-- ***** Question 11 ***** -->
+          <section class="radio-section">
+            <div class="radio-list ">
+              <h3 class="text-white">I often feel anxious or on edge.</h3>
+              <div class="radio-item"><input name="radio11" value="1" id="q11_radio1" type="radio"><label for="q11_radio1">1 Strongly Disagree</label></div>
+              <div class="radio-item"><input name="radio11" value="2" id="q11_radio2" type="radio"><label for="q11_radio2">2 Disagree</label></div>
+              <div class="radio-item"><input name="radio11" value="3" id="q11_radio3" type="radio"><label for="q11_radio3">3 Neutral</label></div>
+              <div class="radio-item"><input name="radio11" value="4" id="q11_radio4" type="radio"><label for="q11_radio4">4 Agree</label></div>
+              <div class="radio-item"><input name="radio11" value="5" id="q11_radio5" type="radio"><label for="q11_radio5">5 Strongly Agree</label></div>
+
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
+                <button class="cutom-btn " onclick="previousPage()"><span> Previous</span></button>
+                <button class="cutom-btn " onclick="nextPage()"><span> Next</span></button>
+              </div>
+            </div>
+          </section>
+         <!-- ***** Question 11 ***** -->
+        </div>
+      </div>
   </div>
 
   <div class="featured section">
@@ -731,7 +841,7 @@
     }
 
     function nextPage() {
-        if (currentPage < 7) {
+        if (currentPage < 21) {
             currentPage++;
             showPage(currentPage);
         }
