@@ -760,12 +760,11 @@ Banner Style
 }
 
 .main-banner .item-1::before {
-  background-color: rgba(0, 0, 0, 0.164); /* Adjust the alpha value for the desired transparency */
-  z-index: -1; /* Move the overlay behind the content */
+  background-color: rgba(0 0 0 / 0.39); /* Adjust the alpha value for the desired transparency */
+  z-index: 1; /* Move the overlay behind the content */
 }
 
 .main-banner .item-1::after {
-  background-image: url(../images/banner-01.jpg);
   background-size: cover;
   z-index: -2; /* Move the background further behind the content and overlay */
 }

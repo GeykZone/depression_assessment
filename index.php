@@ -28,6 +28,15 @@
         opacity: 0;
     }
 
+    #video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+
     /* Add your other styles here */
 </style>
 
@@ -48,35 +57,15 @@
   </div>
   <!-- ***** Preloader End ***** -->
 
-  <nav class="navbar navbar-expand-lg bg-light">
+<!--- Header --->
+<nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
-      </ul>
+
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
@@ -84,9 +73,17 @@
     </div>
   </div>
 </nav>
+<!--- Header --->
 
+<!--- Assessment Form --->
   <div class="main-banner">
       <div class="item item-1">
+
+      <video autoplay muted loop id="video-background">
+            <source src="assets/vids/nature.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
         <div class="header-text">
          <section class="radio-section">
             <div class="radio-list">
@@ -126,7 +123,7 @@
          <!-- ***** Question 1 ***** -->
         <section class="radio-section">
             <div class="radio-list">
-              <h3 class="text-white">I have felt sad, lonely, or down most of the time.</h3>
+              <h3 class="text-white">1. I have felt sad, lonely, or down most of the time.</h3>
               <h4 class="text-danger fw-bold mb-2 radio-error-msg d-none">Kindly select a response from the provided options.</h4>
               <div class="radio-item"><input name="radio1" value="1" id="q1_radio1" type="radio"><label for="q1_radio1">1 Strongly Disagree</label></div>
               <div class="radio-item"><input name="radio1" value="2" id="q1_radio2" type="radio"><label for="q1_radio2">2 Disagree</label></div>
@@ -148,7 +145,7 @@
           <!-- ***** Question 2 ***** -->
         <section class="radio-section">
             <div class="radio-list ">
-              <h3 class="text-white">I have lost interest in activities that I used to enjoy.</h3>
+              <h3 class="text-white">2. I have lost interest in activities that I used to enjoy.</h3>
               <h4 class="text-danger fw-bold mb-2 radio-error-msg d-none">Kindly select a response from the provided options.</h4>
               <div class="radio-item"><input name="radio2" value="1" id="q2_radio1" type="radio"><label for="q2_radio1">1 Strongly Disagree</label></div>
               <div class="radio-item"><input name="radio2" value="2" id="q2_radio2" type="radio"><label for="q2_radio2">2 Disagree</label></div>
@@ -170,7 +167,7 @@
           <!-- ***** Question 3 ***** -->
           <section class="radio-section">
             <div class="radio-list ">
-              <h3 class="text-white">I have trouble sleeping (either too much or too little).</h3>
+              <h3 class="text-white">3. I have trouble sleeping (either too much or too little).</h3>
               <h4 class="text-danger fw-bold mb-2 radio-error-msg d-none">Kindly select a response from the provided options.</h4>
               <div class="radio-item"><input name="radio3" value="1" id="q3_radio1" type="radio"><label for="q3_radio1">1 Strongly Disagree</label></div>
               <div class="radio-item"><input name="radio3" value="2" id="q3_radio2" type="radio"><label for="q3_radio2">2 Disagree</label></div>
@@ -193,7 +190,7 @@
           <!-- ***** Question 4 ***** -->
           <section class="radio-section">
             <div class="radio-list ">
-              <h3 class="text-white">I feel tired or lacks energy in most days.</h3>
+              <h3 class="text-white">4. I feel tired or lacks energy in most days.</h3>
               <h4 class="text-danger fw-bold mb-2 radio-error-msg d-none">Kindly select a response from the provided options.</h4>
               <div class="radio-item"><input name="radio4" value="1" id="q4_radio1" type="radio"><label for="q4_radio1">1 Strongly Disagree</label></div>
               <div class="radio-item"><input name="radio4" value="2" id="q4_radio2" type="radio"><label for="q4_radio2">2 Disagree</label></div>
@@ -216,7 +213,7 @@
           <!-- ***** Question 5 ***** -->
           <section class="radio-section">
             <div class="radio-list ">
-              <h3 class="text-white">I have noticed changes in my appetite or weight.</h3>
+              <h3 class="text-white">5. I have noticed changes in my appetite or weight.</h3>
               <h4 class="text-danger fw-bold mb-2 radio-error-msg d-none">Kindly select a response from the provided options.</h4>
               <div class="radio-item"><input name="radio5" value="1" id="q5_radio1" type="radio"><label for="q5_radio1">1 Strongly Disagree</label></div>
               <div class="radio-item"><input name="radio5" value="2" id="q5_radio2" type="radio"><label for="q5_radio2">2 Disagree</label></div>
@@ -239,7 +236,7 @@
           <!-- ***** Question 6 ***** -->
           <section class="radio-section">
             <div class="radio-list ">
-              <h3 class="text-white">I have difficulty making decisions.</h3>
+              <h3 class="text-white">6. I have difficulty making decisions.</h3>
               <h4 class="text-danger fw-bold mb-2 radio-error-msg d-none">Kindly select a response from the provided options.</h4>
               <div class="radio-item"><input name="radio6" value="1" id="q6_radio1" type="radio"><label for="q6_radio1">1 Strongly Disagree</label></div>
               <div class="radio-item"><input name="radio6" value="2" id="q6_radio2" type="radio"><label for="q6_radio2">2 Disagree</label></div>
@@ -262,7 +259,7 @@
           <!-- ***** Question 7 ***** -->
           <section class="radio-section">
             <div class="radio-list ">
-              <h3 class="text-white">I feel worthless or guilty for no apparent reason.</h3>
+              <h3 class="text-white">7. I feel worthless or guilty for no apparent reason.</h3>
               <h4 class="text-danger fw-bold mb-2 radio-error-msg d-none">Kindly select a response from the provided options.</h4>
               <div class="radio-item"><input name="radio7" value="1" id="q7_radio1" type="radio"><label for="q7_radio1">1 Strongly Disagree</label></div>
               <div class="radio-item"><input name="radio7" value="2" id="q7_radio2" type="radio"><label for="q7_radio2">2 Disagree</label></div>
@@ -285,7 +282,7 @@
           <!-- ***** Question 8 ***** -->
           <section class="radio-section">
             <div class="radio-list ">
-              <h3 class="text-white">I have had thoughts of harming myself or ending my life.</h3>
+              <h3 class="text-white">8. I have had thoughts of harming myself or ending my life.</h3>
               <h4 class="text-danger fw-bold mb-2 radio-error-msg d-none">Kindly select a response from the provided options.</h4>
               <div class="radio-item"><input name="radio8" value="1" id="q8_radio1" type="radio"><label for="q8_radio1">1 Strongly Disagree</label></div>
               <div class="radio-item"><input name="radio8" value="2" id="q8_radio2" type="radio"><label for="q8_radio2">2 Disagree</label></div>
@@ -308,7 +305,7 @@
           <!-- ***** Question 9 ***** -->
           <section class="radio-section">
             <div class="radio-list ">
-              <h3 class="text-white">I have trouble enjoying the company of others.</h3>
+              <h3 class="text-white">9. I have trouble enjoying the company of others.</h3>
               <h4 class="text-danger fw-bold mb-2 radio-error-msg d-none">Kindly select a response from the provided options.</h4>
               <div class="radio-item"><input name="radio9" value="1" id="q9_radio1" type="radio"><label for="q9_radio1">1 Strongly Disagree</label></div>
               <div class="radio-item"><input name="radio9" value="2" id="q9_radio2" type="radio"><label for="q9_radio2">2 Disagree</label></div>
@@ -331,7 +328,7 @@
           <!-- ***** Question 10 ***** -->
           <section class="radio-section">
             <div class="radio-list ">
-              <h3 class="text-white">I find it hard to get out of bed or start my day.</h3>
+              <h3 class="text-white">10. I find it hard to get out of bed or start my day.</h3>
               <h4 class="text-danger fw-bold mb-2 radio-error-msg d-none">Kindly select a response from the provided options.</h4>
               <div class="radio-item"><input name="radio10" value="1" id="q10_radio1" type="radio"><label for="q10_radio1">1 Strongly Disagree</label></div>
               <div class="radio-item"><input name="radio10" value="2" id="q10_radio2" type="radio"><label for="q10_radio2">2 Disagree</label></div>
@@ -354,7 +351,7 @@
           <!-- ***** Question 11 ***** -->
           <section class="radio-section">
             <div class="radio-list ">
-              <h3 class="text-white">I often feel anxious or on edge.</h3>
+              <h3 class="text-white">11. I often feel anxious or on edge.</h3>
               <h4 class="text-danger fw-bold mb-2 radio-error-msg d-none">Kindly select a response from the provided options.</h4>
               <div class="radio-item"><input name="radio11" value="1" id="q11_radio1" type="radio"><label for="q11_radio1">1 Strongly Disagree</label></div>
               <div class="radio-item"><input name="radio11" value="2" id="q11_radio2" type="radio"><label for="q11_radio2">2 Disagree</label></div>
@@ -377,7 +374,7 @@
           <!-- ***** Question 12 ***** -->
           <section class="radio-section">
             <div class="radio-list ">
-              <h3 class="text-white">I have lost interest in my personal appearance or hygiene.</h3>
+              <h3 class="text-white">12. I have lost interest in my personal appearance or hygiene.</h3>
               <h4 class="text-danger fw-bold mb-2 radio-error-msg d-none">Kindly select a response from the provided options.</h4>
               <div class="radio-item"><input name="radio12" value="1" id="q12_radio1" type="radio"><label for="q12_radio1">1 Strongly Disagree</label></div>
               <div class="radio-item"><input name="radio12" value="2" id="q12_radio2" type="radio"><label for="q12_radio2">2 Disagree</label></div>
@@ -400,7 +397,7 @@
           <!-- ***** Question 13 ***** -->
           <section class="radio-section">
             <div class="radio-list ">
-              <h3 class="text-white">I have experienced physical symptoms such as aches, heart burn, hyper ventilation and/ or digestive issues without apparent reasons.</h3>
+              <h3 class="text-white">13. I have experienced physical symptoms such as aches, heart burn, hyper ventilation and/ or digestive issues without apparent reasons.</h3>
               <h4 class="text-danger fw-bold mb-2 radio-error-msg d-none">Kindly select a response from the provided options.</h4>
               <div class="radio-item"><input name="radio13" value="1" id="q13_radio1" type="radio"><label for="q13_radio1">1 Strongly Disagree</label></div>
               <div class="radio-item"><input name="radio13" value="2" id="q13_radio2" type="radio"><label for="q13_radio2">2 Disagree</label></div>
@@ -423,7 +420,7 @@
           <!-- ***** Question 14 ***** -->
           <section class="radio-section">
             <div class="radio-list ">
-              <h3 class="text-white">Over the past two weeks, I am anxious and agitated or restless.</h3>
+              <h3 class="text-white">14. Over the past two weeks, I am anxious and agitated or restless.</h3>
               <h4 class="text-danger fw-bold mb-2 radio-error-msg d-none">Kindly select a response from the provided options.</h4>
               <div class="radio-item"><input name="radio14" value="1" id="q14_radio1" type="radio"><label for="q14_radio1">1 Strongly Disagree</label></div>
               <div class="radio-item"><input name="radio14" value="2" id="q14_radio2" type="radio"><label for="q14_radio2">2 Disagree</label></div>
@@ -446,7 +443,7 @@
           <!-- ***** Question 15 ***** -->
           <section class="radio-section">
             <div class="radio-list ">
-              <h3 class="text-white">I have angry outburst, irritability and frustration even on small matters.</h3>
+              <h3 class="text-white">15. I have angry outburst, irritability and frustration even on small matters.</h3>
               <h4 class="text-danger fw-bold mb-2 radio-error-msg d-none">Kindly select a response from the provided options.</h4>
               <div class="radio-item"><input name="radio15" value="1" id="q15_radio1" type="radio"><label for="q15_radio1">1 Strongly Disagree</label></div>
               <div class="radio-item"><input name="radio15" value="2" id="q15_radio2" type="radio"><label for="q15_radio2">2 Disagree</label></div>
@@ -469,7 +466,7 @@
           <!-- ***** Question 16 ***** -->
           <section class="radio-section">
             <div class="radio-list ">
-              <h3 class="text-white">This past two weeks, I am self-blaming.</h3>
+              <h3 class="text-white">16. This past two weeks, I am self-blaming.</h3>
               <h4 class="text-danger fw-bold mb-2 radio-error-msg d-none">Kindly select a response from the provided options.</h4>
               <div class="radio-item"><input name="radio16" value="1" id="q16_radio1" type="radio"><label for="q16_radio1">1 Strongly Disagree</label></div>
               <div class="radio-item"><input name="radio16" value="2" id="q16_radio2" type="radio"><label for="q16_radio2">2 Disagree</label></div>
@@ -492,7 +489,7 @@
           <!-- ***** Question 17 ***** -->
           <section class="radio-section">
             <div class="radio-list ">
-              <h3 class="text-white">Lately, I wanted to be alone inside a dark room.</h3>
+              <h3 class="text-white">17. Lately, I wanted to be alone inside a dark room.</h3>
               <h4 class="text-danger fw-bold mb-2 radio-error-msg d-none">Kindly select a response from the provided options.</h4>
               <div class="radio-item"><input name="radio17" value="1" id="q17_radio1" type="radio"><label for="q17_radio1">1 Strongly Disagree</label></div>
               <div class="radio-item"><input name="radio17" value="2" id="q17_radio2" type="radio"><label for="q17_radio2">2 Disagree</label></div>
@@ -515,7 +512,7 @@
           <!-- ***** Question 18 ***** -->
           <section class="radio-section">
             <div class="radio-list ">
-              <h3 class="text-white">This past few weeks, I am hearing voices or seeing stuffs.</h3>
+              <h3 class="text-white">18. This past few weeks, I am hearing voices or seeing stuffs.</h3>
               <h4 class="text-danger fw-bold mb-2 radio-error-msg d-none">Kindly select a response from the provided options.</h4>
               <div class="radio-item"><input name="radio18" value="1" id="q18_radio1" type="radio"><label for="q18_radio1">1 Strongly Disagree</label></div>
               <div class="radio-item"><input name="radio18" value="2" id="q18_radio2" type="radio"><label for="q18_radio2">2 Disagree</label></div>
@@ -538,7 +535,7 @@
           <!-- ***** Question 19 ***** -->
           <section class="radio-section">
             <div class="radio-list ">
-              <h3 class="text-white">Lately, I feel nobody understands me all the time.</h3>
+              <h3 class="text-white">19. Lately, I feel nobody understands me all the time.</h3>
               <h4 class="text-danger fw-bold mb-2 radio-error-msg d-none">Kindly select a response from the provided options.</h4>
               <div class="radio-item"><input name="radio19" value="1" id="q19_radio1" type="radio"><label for="q19_radio1">1 Strongly Disagree</label></div>
               <div class="radio-item"><input name="radio19" value="2" id="q19_radio2" type="radio"><label for="q19_radio2">2 Disagree</label></div>
@@ -561,7 +558,7 @@
           <!-- ***** Question 20 ***** -->
           <section class="radio-section">
             <div class="radio-list ">
-              <h3 class="text-white">Recently, I have problems with my memory, concentration and focus.</h3>
+              <h3 class="text-white">20. Recently, I have problems with my memory, concentration and focus.</h3>
               <h4 class="text-danger fw-bold mb-2 radio-error-msg d-none">Kindly select a response from the provided options.</h4>
               <div class="radio-item"><input name="radio20" value="1" id="q20_radio1" type="radio"><label for="q20_radio1">1 Strongly Disagree</label></div>
               <div class="radio-item"><input name="radio20" value="2" id="q20_radio2" type="radio"><label for="q20_radio2">2 Disagree</label></div>
@@ -571,7 +568,7 @@
 
               <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
                 <button class="cutom-btn " onclick="previousPage()"><span> Previous</span></button>
-                <button class="cutom-btn " ><span> Submit</span></button>
+                <button class="cutom-btn " onclick="nextPage()" ><span> Submit</span></button>
               </div>
             </div>
           </section>
@@ -580,6 +577,8 @@
       </div>
 
   </div>
+<!--- Assessment Form --->
+
 <!--- Results --->
 <!--- Results --->
 
@@ -598,83 +597,6 @@
   <script src="assets/js/owl-carousel.js"></script>
   <script src="assets/js/counter.js"></script>
   <script src="assets/js/custom.js"></script>
-  <script>
-      let currentPage = 1;
-      const items = document.querySelectorAll('.item');
-
-      function showPage(pageNumber) {
-        $(".radio-error-msg").addClass("d-none");
-          items.forEach((item, index) => {
-              if (index + 1 === pageNumber) {
-                item.classList.remove('hidden');
-              } else {
-                  item.classList.add('hidden');
-              }
-          });
-      }
-      
-
-      function nextPage() {
-        let hasLRN = true;
-        let lrnId = $("#lrn_input");
-        let invalidIrnMsgId = $("#invalid_lrn_msg");
-
-        if (lrnId.val().length < 12) 
-        {
-          invalidIrnMsgId.removeClass("d-none");
-          hasLRN = false;
-        }
-
-        if(hasLRN)
-        {
-          invalidIrnMsgId.addClass("d-none");
-
-          if (currentPage < 21) {
-            let radiobutton = currentPage - 1;
-            let hasChecked = true
-            if(radiobutton != 0)
-            {
-              if (!$("input[name='radio"+radiobutton+"']:checked").length > 0) {
-                // Remove d-none class from p tag with class radio-error-msg
-                $(".radio-error-msg").removeClass("d-none");
-                hasChecked = false
-              }
-            }
-
-            if(hasChecked)
-            { currentPage++;
-              showPage(currentPage);
-            }
-          }
-        }
-
-      }
-
-      function previousPage() {
-          if (currentPage > 1) {
-              currentPage--;
-              showPage(currentPage);
-          }
-      }
-
-      function validateInput() {
-      let inputField = document.getElementById('lrn_input');
-
-      let inputValue = inputField.value;
-
-      // Remove non-numeric characters
-      let numericValue = inputValue.replace(/\D/g, '');
-
-      // Limit to 12 digits
-      numericValue = numericValue.substring(0, 12);
-
-      // Update the input field
-      inputField.value = numericValue;
-     }
-
-  </script>
-
-
-
+  <script src="assets/js/depression-Assessment.js"></script>
   </body>
 </html>
