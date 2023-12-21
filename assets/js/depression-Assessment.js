@@ -1,5 +1,6 @@
 let currentPage = 1;
 let selectedOptions = [];
+let depressionLevel = 'Low Level'
 const items = document.querySelectorAll('.item');
 
 function showPage(pageNumber) {
@@ -46,16 +47,14 @@ function nextPage() {
 
       if(hasChecked)
       { 
-        currentPage++;
-        if(currentPage < 22)
+        currentPage++; 
+
+        if(currentPage > 21)
         {
-          showPage(currentPage);
+          
         }
-        else
-        {
-          currentPage--;
-          calculateAssessment ();  
-        }
+        calculateAssessment ();
+        showPage(currentPage); 
         
       }
     }
@@ -97,6 +96,40 @@ function calculateAssessment ()
 
     // Output the mean
     console.log('Mean Rating:', mean);
+
+    // Use the update method to modify the series options
+
+    const chart = Highcharts.charts[0];
+    if (chart && !chart.renderer.forExport) {
+        const point = chart.series[0].points[0],
+            inc = mean;
+
+            $('.highcharts-description').text("The individual displays signs of emotional well-being and does not exhibit any indications of depression.");
+
+            if(inc > 1.99)
+            {
+              depressionLevel = 'Moderate Level';
+              $('.highcharts-description').text("Recommends seeking counseling and therapeutic intervention to address and navigate personal challenges and emotional well-being.");
+            }
+
+            if(inc > 3.99)
+            {
+              depressionLevel = 'High Level';
+              $('.highcharts-description').text("Requires the assistance of qualified professionals, including prescribed medication and psychological therapy, to effectively address and manage the underlying issues affecting mental health. Seeking comprehensive treatment from medical and mental health experts is recommended for optimal support and recovery.");
+            }
+
+        //const chartFormat = chart.series[0].userOptions.dataLabels.format,
+        const chartFormatLevel = '{y} '+depressionLevel;
+
+        point.update(inc);
+
+        chart.series[0].update({
+          dataLabels: {
+              format: chartFormatLevel
+          }
+        });
+        console.log(chart.series[0]);
+    }
 }
 
 function validateInput() {
@@ -113,3 +146,102 @@ numericValue = numericValue.substring(0, 12);
 // Update the input field
 inputField.value = numericValue;
 }
+
+Highcharts.chart('container', {
+
+  chart: {
+      type: 'gauge',
+      plotBackgroundColor: null,
+      plotBackgroundImage: null,
+      plotBorderWidth: 0,
+      plotShadow: false,
+      height: '80%'
+  },
+
+  title: {
+      text: 'Depression Level'
+  },
+
+  pane: {
+      startAngle: -90,
+      endAngle: 89.9,
+      background: null,
+      center: ['50%', '75%'],
+      size: '110%'
+  },
+
+  // the value axis
+  yAxis: {
+      min: 1,
+      max: 5,
+      tickPixelInterval: 72,
+      tickPosition: 'inside',
+      tickColor: Highcharts.defaultOptions.chart.backgroundColor || '#FFFFFF',
+      tickLength: 20,
+      tickWidth: 2,
+      minorTickInterval: null,
+      labels: {
+          distance: 20,
+          style: {
+              fontSize: '14px'
+          }
+      },
+      lineWidth: 0,
+      plotBands: [{
+          from: 0,
+          to: 2,
+          color: '#55BF3B', // green
+          thickness: 20
+      }, {
+          from: 2,
+          to: 3,
+          color: '#DDDF0D', // yellow
+          thickness: 20
+      }, {
+          from: 3,
+          to: 4,
+          color: '#FF4500', // orange
+          thickness: 20
+      }, {
+        from: 4,
+        to: 5,
+        color: '#EC0D00', // red
+        thickness: 20
+    }]
+  },
+
+  series: [{
+      name: 'Depression Level',
+      data: [3.2],
+      tooltip: {
+          valueSuffix: ' ' + depressionLevel
+      },
+      dataLabels: {
+          format: '{y} ' + depressionLevel,
+          borderWidth: 0,
+          color: (
+              Highcharts.defaultOptions.title &&
+              Highcharts.defaultOptions.title.style &&
+              Highcharts.defaultOptions.title.style.color
+          ) || '#333333',
+          style: {
+              fontSize: '16px'
+          }
+      },
+      dial: {
+          radius: '80%',
+          backgroundColor: 'gray',
+          baseWidth: 12,
+          baseLength: '0%',
+          rearLength: '0%'
+      },
+      pivot: {
+          backgroundColor: 'gray',
+          radius: 6
+      }
+
+  }]
+
+});
+
+
