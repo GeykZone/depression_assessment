@@ -83,9 +83,9 @@
     /* Add your other styles here */
    </style>
 
-  <script src="https://code.highcharts.com/highcharts.js"></script>
-  <script src="https://code.highcharts.com/highcharts-more.js"></script> 
-  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
   </head>
 
@@ -627,13 +627,15 @@
         <div class="header-text">
           <!-- ***** Question 20 ***** -->
           <section class="radio-section">
-            <div class="radio-list ">
+            <div class="radio-list">
 
-              <figure class="highcharts-figure">
-                  <div id="container"></div>
+              <figure class="highcharts-figure ">
+                  <div id="container" class="d-none"></div>
+                  <h6 id = "main-recommendation"></h6>
+                  <br>
                   <p class="highcharts-description" ></p>
               </figure> 
-              
+
               <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
                 <button class="cutom-btn " onclick="previousPage()"><span> Previous</span></button>
                 <button class="cutom-btn " onclick="nextPage()" ><span> Submit</span></button>

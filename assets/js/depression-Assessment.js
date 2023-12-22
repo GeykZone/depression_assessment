@@ -51,9 +51,9 @@ function nextPage() {
 
         if(currentPage > 21)
         {
-          
+          calculateAssessment();
         }
-        calculateAssessment ();
+      
         showPage(currentPage); 
         
       }
@@ -105,30 +105,36 @@ function calculateAssessment ()
             inc = mean;
 
             $('.highcharts-description').text("The individual displays signs of emotional well-being and does not exhibit any indications of depression.");
-
+            $('#main-recommendation').text("Normal")
             if(inc > 1.99)
             {
               depressionLevel = 'Moderate Level';
+              $('#main-recommendation').text("Needs counseling and therapy.")
               $('.highcharts-description').text("Recommends seeking counseling and therapeutic intervention to address and navigate personal challenges and emotional well-being.");
             }
 
             if(inc > 3.99)
             {
               depressionLevel = 'High Level';
+              $('#main-recommendation').text("Needs professional help such as medication and therapy.")
               $('.highcharts-description').text("Requires the assistance of qualified professionals, including prescribed medication and psychological therapy, to effectively address and manage the underlying issues affecting mental health. Seeking comprehensive treatment from medical and mental health experts is recommended for optimal support and recovery.");
             }
 
         //const chartFormat = chart.series[0].userOptions.dataLabels.format,
         const chartFormatLevel = '{y} '+depressionLevel;
 
-        point.update(inc);
-
         chart.series[0].update({
           dataLabels: {
               format: chartFormatLevel
           }
         });
-        console.log(chart.series[0]);
+
+        $("#container").removeClass("d-none");
+
+        // Introduce a delay of 2 seconds (2000 milliseconds) before calling calculateAssessment
+        setTimeout(function() {
+        point.update(mean);
+        }, 500);
     }
 }
 
@@ -147,6 +153,7 @@ numericValue = numericValue.substring(0, 12);
 inputField.value = numericValue;
 }
 
+//Chart Calculations
 Highcharts.chart('container', {
 
   chart: {
@@ -212,7 +219,7 @@ Highcharts.chart('container', {
 
   series: [{
       name: 'Depression Level',
-      data: [3.2],
+      data: [1],
       tooltip: {
           valueSuffix: ' ' + depressionLevel
       },
@@ -243,5 +250,4 @@ Highcharts.chart('container', {
   }]
 
 });
-
 
