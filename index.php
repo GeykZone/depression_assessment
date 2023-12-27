@@ -638,7 +638,6 @@
 
               <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
                 <button class="cutom-btn " onclick="previousPage()"><span> Previous</span></button>
-                <button class="cutom-btn " onclick="nextPage()" ><span> Submit</span></button>
               </div>
             </div>
           </section>
@@ -650,6 +649,9 @@
 <!--- Assessment Form --->
 
 <!--- Results --->
+<?php 
+include('./results.php');
+?>
 <!--- Results --->
 
   <footer>

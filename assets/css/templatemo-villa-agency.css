@@ -745,6 +745,14 @@ Banner Style
   margin-top: 0px;
 }
 
+.main-banner .item-22 {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px 20% 30px 20% !important;
+  margin-top: 0px;
+}
+
 .main-banner .item-1 {
   position: relative;
 }
