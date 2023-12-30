@@ -70,6 +70,7 @@ function previousPage() {
           selectedOptions.pop(); // Removes the last element from the array
         } 
         showPage(currentPage);
+        $("#SummaryContent").slideUp();
     }
 }
 
@@ -81,8 +82,8 @@ function recordSelectedOption (radiobutton)
     let integerOptionValue = parseInt(optionValue, 10);
     selectedOptions.push(integerOptionValue);
     console.log(selectedOptions);
+    console.log(`Question: ${radiobutton} - Selected: ${optionValue}`);
   }
-  
 }
 
 function calculateAssessment ()
@@ -98,7 +99,6 @@ function calculateAssessment ()
     console.log('Mean Rating:', mean);
 
     // Use the update method to modify the series options
-
     const chart = Highcharts.charts[0];
     if (chart && !chart.renderer.forExport) {
         const point = chart.series[0].points[0],
@@ -122,8 +122,12 @@ function calculateAssessment ()
 
         //const chartFormat = chart.series[0].userOptions.dataLabels.format,
         const chartFormatLevel = '{y} '+depressionLevel;
+        const tooltipFormat = ' ' + depressionLevel;
 
         chart.series[0].update({
+          tooltip: {
+            valueSuffix: tooltipFormat
+          },
           dataLabels: {
               format: chartFormatLevel
           }
@@ -135,7 +139,42 @@ function calculateAssessment ()
         setTimeout(function() {
         point.update(mean);
         }, 500);
+
+        CalculateSummary(selectedOptions.length);
+        countTotalSelectedOptions(selectedOptions)
     }
+}
+
+function CalculateSummary(ArrLength) {
+  let SumNo = 1;
+  for (let i=0; i < ArrLength; i++)
+  {
+    let SummaryOfSelectedOption = 'Strongly Disagree';
+
+    if(selectedOptions[i] == 2)
+    {
+      SummaryOfSelectedOption = 'Disagree'
+    }
+    else if(selectedOptions[i] == 3)
+    {
+      SummaryOfSelectedOption = 'Neutral'
+    }
+    else if(selectedOptions[i] == 4)
+    {
+      SummaryOfSelectedOption = 'Agree'
+    }
+    else if(selectedOptions[i] == 5)
+    {
+      SummaryOfSelectedOption = 'Strongly Agree'
+    }
+
+    $(`#summary-${SumNo}`).text(SummaryOfSelectedOption);
+    console.log(`Summary: ${SumNo} = ${SummaryOfSelectedOption}`);
+    SumNo++;
+
+    $("#SummaryContent").slideDown();
+  }
+
 }
 
 function validateInput() {
@@ -151,6 +190,49 @@ numericValue = numericValue.substring(0, 12);
 
 // Update the input field
 inputField.value = numericValue;
+}
+
+function countTotalSelectedOptions(array)
+{
+  var counts = {};
+
+  $.each(array, function(index, value) {
+      if (counts[value] === undefined) {
+          counts[value] = 1;
+      } else {
+          counts[value]++;
+      }
+  });
+
+  // Display the counts
+  $.each(counts, function(key, value) {
+      console.log(key + ": " + value);
+
+      if(key == 1)
+      {
+        $("#total_s_disagree").text(`${value} Total`);
+      }
+
+      if(key == 2)
+      {
+        $("#total_disagree").text(`${value} Total`);
+      }
+
+      if(key == 3)
+      {
+        $("#total_neutral").text(`${value} Total`);
+      }
+
+      if(key == 4)
+      {
+        $("#total_Agree").text(`${value} Total`);
+      }
+
+      if(key == 5)
+      {
+        $("#total_s_Agree").text(`${value} Total`);
+      }
+  });
 }
 
 //Chart Calculations

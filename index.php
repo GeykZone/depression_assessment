@@ -636,7 +636,7 @@
                   <p class="highcharts-description" ></p>
               </figure> 
 
-              <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-3">
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-5">
                 <button class="cutom-btn " onclick="previousPage()"><span> Previous</span></button>
               </div>
             </div>

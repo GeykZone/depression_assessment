@@ -1,4 +1,4 @@
-<div class="featured section">
+<div class="featured section" style = "display:none;" id = "SummaryContent">
     <div class="container" >
       <div class="row" style="padding-bottom: 100px;">
 
