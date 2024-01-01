@@ -1,7 +1,17 @@
 let currentPage = 1;
 let selectedOptions = [];
 let depressionLevel = 'Low Level'
+var totalLevel = 0;
 const items = document.querySelectorAll('.item');
+// Create a new Date object
+var currentDate = new Date();
+// Get various components of the current date
+var year = currentDate.getFullYear();
+var month = currentDate.getMonth() + 1; // Months are zero-based, so add 1
+var day = currentDate.getDate();
+var hours = currentDate.getHours();
+var minutes = currentDate.getMinutes();
+var seconds = currentDate.getSeconds();
 
 function showPage(pageNumber) {
   $(".radio-error-msg").addClass("d-none");
@@ -94,6 +104,8 @@ function calculateAssessment ()
 
     // Calculate the mean
     const mean = sum / selectedOptions.length;
+
+    totalLevel = mean;
 
     // Output the mean
     console.log('Mean Rating:', mean);
@@ -234,6 +246,87 @@ function countTotalSelectedOptions(array)
       }
   });
 }
+
+function changeAnswers()
+{
+  previousPage()
+
+  $("#reSub").removeClass("d-none");
+  $("#newSub").addClass("d-none");
+}
+
+function reSubmit()
+{
+  nextPage()
+}
+
+function newSubmit()
+{
+  nextPage()
+}
+
+function printSummary()
+{
+ 
+  var props = {
+    outputType: jsPDFInvoiceTemplate.OutputType.Save,
+    returnJsPDFDocObject: true,
+    fileName: "Assessment Summary "+ year + '-' + month + '-' + day,
+    orientationLandscape: false,
+    compress: true,
+    logo: {
+        src: "https://scontent.fdvo2-1.fna.fbcdn.net/v/t31.18172-8/291679_271762202845058_1322743400_o.jpg?_nc_cat=108&ccb=1-7&_nc_sid=7a1959&_nc_eui2=AeF9hVf97w8wxUk-oQkoT9KW_v3hfJXJpsb-_eF8lcmmxtrF2JbYDUAU_scJa7MpkovmvxYIN_iO9GK3dBffkynH&_nc_ohc=7CorEUgH7kYAX84C79u&_nc_ht=scontent.fdvo2-1.fna&oh=00_AfBgd9wlWCyqlA3ynCNMsSsY9dis910rQw4xbYO_PCKxPg&oe=65BA68DB",
+        type: 'PNG', //optional, when src= data:uri (nodejs case)
+        width: 26.66, //aspect ratio = width/height
+        height: 26.66,
+        margin: {
+            top: 0, //negative or positive num, from the current position
+            left: 0 //negative or positive num, from the current position
+        }
+    },
+    business: {
+        name: "LRN: " + $('#lrn_input').val() ,
+          address: `Assessment Score: ${totalLevel}`,
+          phone:  `Depression Level: ${depressionLevel}`,
+          email: 'Assessment Date: ' + year + '-' + month + '-' + day,
+    },
+    invoice: {
+        headerBorder: false,
+        tableBodyBorder: false,
+        header: [
+          { 
+            title: "Assessment Questions",
+            style: {
+              width: 130
+            } 
+          }, 
+          { 
+            title: "Selected Options",
+            style: {
+              width: 50
+            } 
+          }
+        ],
+        table: Array.from(Array(20), (item, index)=>(
+          [
+            $(`#t-${index+1}`).text(),
+            $(`#summary-${index+1}`).text(),
+        ])),
+        invDescLabel: $('#main-recommendation').text() + '\n',
+        invDesc: $(".highcharts-description").text(),
+    },
+    footer: {
+        text: "Depression Assessment Questionnaire",
+    },
+    pageEnable: true,
+    pageLabel: "Page ",
+  };
+
+  //or in browser
+  var pdfObject = jsPDFInvoiceTemplate.default(props); //returns number of pages created
+}
+
+
 
 //Chart Calculations
 Highcharts.chart('container', {
