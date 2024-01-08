@@ -2,7 +2,7 @@
     <div class="container" >
       <div class="row" style="padding-bottom: 100px;">
 
-        <div class="col-lg-4">
+        <div class="col-lg-4 summaryImg d-none">
           <div class="left-image">
             <img src="assets/images/assessment_pic1.png" alt="">
           </div>

@@ -106,20 +106,13 @@
 <!--- Header --->
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Advancing Mental Health Care</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-   
-    <!--- 
-     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div><img src="./assets/images/logo.png" class="img-thumbnail border-0" alt="..." style="width:50px; height:50px;">
+    <a class="navbar-brand d-none" href="#">Advancing Mental Health Care</a></div>
 
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <button class="btn btn-outline-success" type="submit">Login as Admin</button>
     </div>
-    --->
+  
 
   </div>
 </nav>
@@ -129,7 +122,7 @@
   <div class="main-banner">
       <div class="item item-1">
 
-      <video autoplay muted loop id="video-background">
+       <video autoplay muted loop id="video-background">
             <source src="assets/vids/nature.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -139,15 +132,34 @@
             <div class="radio-list">
 
               <h3 class="text-white">Depression Assessment Questionnaire</h3>
+              
 
-              <h5 class="fw-bold mb-2 d-none" style = "color: #fe2525;" id="invalid_lrn_msg">Please enter a valid Learner Reference Number that consists of 12 digits.</h5>
-              <div class="input-group mb-3">
+              <div class="row">
+                <div class=" col-lg-6 col-sm-12">
+                  <div class="input-group mt-3">
+                  <label class="input-group-text" for="inputGroupSelect01">Strand: </label>
+                  <input type="text" class="form-control" placeholder="Student Strand" id="strand_input" oninput="validateInput()" maxlength="12">
+                  </div>
+                  <h5 class="fw-bold mt-2 d-none" style = "color: #fe2525;" id="invalid_strand_msg">Please enter a valid input.</h5>
+                </div>
+
+                <div class=" col-lg-6 col-sm-12">
+                  <div class="input-group mt-3">
+                  <label class="input-group-text" for="inputGroupSelect01">Year/Level: </label>
+                  <input type="text" class="form-control" placeholder="Student Year/Level" id="year_level_input" oninput="validateInput()" maxlength="12">
+                  </div>
+                  <h5 class="fw-bold mt-2 d-none" style = "color: #fe2525;" id="invalid_year_level_msg">Please enter a valid input.</h5>
+                </div>
+              </div>
+
+              
+              <div class="input-group mt-3">
               <label class="input-group-text" for="inputGroupSelect01">LRN: </label>
               <input type="text" class="form-control" placeholder="Learner Reference Number" id="lrn_input" oninput="validateInput()" maxlength="12">
               </div>
-             
+              <h5 class="fw-bold mt-2 d-none" style = "color: #fe2525;" id="invalid_lrn_msg">Please enter a valid Learner Reference Number that consists of 12 digits.</h5>
 
-              <h4 class="text-white">For each statement, click the number that best represents your feelings or experiences.
+              <h4 class="text-white mt-4">For each statement, click the number that best represents your feelings or experiences.
                 Use the following scale:
               </h4>
 

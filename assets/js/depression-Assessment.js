@@ -12,6 +12,13 @@ var day = currentDate.getDate();
 var hours = currentDate.getHours();
 var minutes = currentDate.getMinutes();
 var seconds = currentDate.getSeconds();
+// Array of month names
+var monthNames = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+// Convert numeric month to word
+var monthWord = monthNames[month - 1]; // Subtract 1 because array is zero-based
 
 function showPage(pageNumber) {
   $(".radio-error-msg").addClass("d-none");
@@ -27,7 +34,11 @@ function showPage(pageNumber) {
 function nextPage() {
   let hasLRN = true;
   let lrnId = $("#lrn_input");
+  let strand = $("#strand_input");
+  let yearLevel = $("#year_level_input");
   let invalidIrnMsgId = $("#invalid_lrn_msg");
+  let invalidStrandMsgId = $("#invalid_strand_msg");
+  let invalidYearLevelMsgId = $("#invalid_year_level_msg");
 
   if (lrnId.val().length < 12) 
   {
@@ -35,9 +46,23 @@ function nextPage() {
     hasLRN = false;
   }
 
+  if (strand.val().length < 1) 
+  {
+    invalidStrandMsgId.removeClass("d-none");
+    hasLRN = false;
+  }
+
+  if (yearLevel.val().length < 1) 
+  {
+    invalidYearLevelMsgId.removeClass("d-none");
+    hasLRN = false;
+  }
+
   if(hasLRN)
   {
     invalidIrnMsgId.addClass("d-none");
+    invalidStrandMsgId.addClass("d-none");
+    invalidYearLevelMsgId.addClass("d-none");
 
     if (currentPage <= 21) {
       let radiobutton = currentPage - 1;
@@ -275,7 +300,7 @@ function printSummary()
     orientationLandscape: false,
     compress: true,
     logo: {
-        src: "https://scontent.fdvo2-1.fna.fbcdn.net/v/t31.18172-8/291679_271762202845058_1322743400_o.jpg?_nc_cat=108&ccb=1-7&_nc_sid=7a1959&_nc_eui2=AeF9hVf97w8wxUk-oQkoT9KW_v3hfJXJpsb-_eF8lcmmxtrF2JbYDUAU_scJa7MpkovmvxYIN_iO9GK3dBffkynH&_nc_ohc=7CorEUgH7kYAX84C79u&_nc_ht=scontent.fdvo2-1.fna&oh=00_AfBgd9wlWCyqlA3ynCNMsSsY9dis910rQw4xbYO_PCKxPg&oe=65BA68DB",
+        src: "assets/images/logo.png",
         type: 'PNG', //optional, when src= data:uri (nodejs case)
         width: 26.66, //aspect ratio = width/height
         height: 26.66,
@@ -285,10 +310,10 @@ function printSummary()
         }
     },
     business: {
-        name: "LRN: " + $('#lrn_input').val() ,
-          address: `Assessment Score: ${totalLevel}`,
-          phone:  `Depression Level: ${depressionLevel}`,
-          email: 'Assessment Date: ' + year + '-' + month + '-' + day,
+          address: "LRN: " + $('#lrn_input').val() ,
+          phone: `${$('#strand_input').val()} - ${$('#year_level_input').val()}`,
+          email_1: `${totalLevel} ${depressionLevel}`,
+          website:  monthWord + ' ' + day + ', ' + year,
     },
     invoice: {
         headerBorder: false,
@@ -316,7 +341,7 @@ function printSummary()
         invDesc: $(".highcharts-description").text(),
     },
     footer: {
-        text: "Depression Assessment Questionnaire",
+        text: "Advancing Mental Health Care",
     },
     pageEnable: true,
     pageLabel: "Page ",
@@ -326,7 +351,24 @@ function printSummary()
   var pdfObject = jsPDFInvoiceTemplate.default(props); //returns number of pages created
 }
 
-
+// Function to check screen width and display alert
+function checkScreenWidth() {
+  // Check if the screen width is 455px or below
+  if (window.innerWidth <= 550) {
+    // Display an alert
+    $(".navbar-brand").addClass("d-none")
+    $(".summaryImg").addClass("d-none")
+  }
+  else
+  {
+    $('.navbar-brand').removeClass("d-none")
+    $('.summaryImg').removeClass("d-none")
+  }
+}
+// Initial check on page load
+checkScreenWidth();
+// Attach the function to the window.onresize event
+window.onresize = checkScreenWidth;
 
 //Chart Calculations
 Highcharts.chart('container', {
