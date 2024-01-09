@@ -110,10 +110,8 @@
     <a class="navbar-brand d-none" href="#">Advancing Mental Health Care</a></div>
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-    <button class="btn btn-outline-success" type="submit">Login as Admin</button>
+    <a href="login-form/login.php" class="btn btn-outline-success" type="submit">Login as Admin</a>
     </div>
-  
-
   </div>
 </nav>
 <!--- Header --->
